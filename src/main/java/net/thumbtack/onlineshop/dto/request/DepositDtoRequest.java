@@ -1,16 +1,21 @@
 package net.thumbtack.onlineshop.dto.request;
 
+import javax.validation.constraints.PositiveOrZero;
+
 public class DepositDtoRequest {
 
-    private Integer deposit;
+    @PositiveOrZero(message = "{user.deposit.PositiveOrZero.message}")
+    private int deposit;
 
-    public DepositDtoRequest(Integer deposit) {
+    public DepositDtoRequest() {
+    }
+
+    public DepositDtoRequest(int deposit) {
         this.deposit = deposit;
     }
 
-    public Integer getDeposit() {
+    public int getDeposit() {
         return deposit;
     }
-
 
 }

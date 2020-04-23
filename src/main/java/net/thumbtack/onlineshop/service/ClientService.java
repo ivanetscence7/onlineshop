@@ -1,14 +1,14 @@
 package net.thumbtack.onlineshop.service;
 
 import net.thumbtack.onlineshop.daoimpl.ClientDaoImpl;
-import net.thumbtack.onlineshop.daoimpl.daoexception.DaoException;
-import net.thumbtack.onlineshop.dto.request.AddProductToBasketDtoRequest;
-import net.thumbtack.onlineshop.dto.request.RegistrationClientDtoRequest;
+import net.thumbtack.onlineshop.dto.request.ClientDtoRequest;
 import net.thumbtack.onlineshop.dto.request.UpdateClientDtoRequest;
-import net.thumbtack.onlineshop.dto.response.AddProductToBasketDtoResponse;
-import net.thumbtack.onlineshop.dto.response.InputClientDtoResponse;
-import net.thumbtack.onlineshop.model.*;
-import net.thumbtack.onlineshop.service.exception.ServiceException;
+import net.thumbtack.onlineshop.dto.response.ClientDtoResponse;
+import net.thumbtack.onlineshop.dto.response.InfoAboutAllClientDtoResponse;
+import net.thumbtack.onlineshop.dto.response.InfoAboutClientDtoResponse;
+import net.thumbtack.onlineshop.exception.DaoException;
+import net.thumbtack.onlineshop.exception.ServiceException;
+import net.thumbtack.onlineshop.model.Client;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,16 +16,17 @@ import org.springframework.stereotype.Service;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
-import static net.thumbtack.onlineshop.config.Config.COOKIE_NAME;
+import static net.thumbtack.onlineshop.config.AppProperties.COOKIE_NAME;
+import static net.thumbtack.onlineshop.exception.AppErrorCode.PERMISSION_DENIED;
+import static net.thumbtack.onlineshop.exception.AppErrorCode.WRONG_TOKEN;
 import static net.thumbtack.onlineshop.model.UserType.CLIENT;
 
 @Service
-public class ClientService {
+public class ClientService extends BaseService {
 
     private final ClientDaoImpl clientDao;
     private static final Logger LOGGER = LoggerFactory.getLogger(ClientService.class);
@@ -35,71 +36,76 @@ public class ClientService {
         this.clientDao = clientDao;
     }
 
-    public InputClientDtoResponse clientRegistration(RegistrationClientDtoRequest req, HttpServletResponse response) {
-
-        Deposit deposit = new Deposit(0);
-        User user = new Client(req.getFirstName(), req.getLastName(), req.getPatronymic(), req.getLogin(), req.getPassword(),
-                CLIENT, req.getEmail(), req.getAddress(), req.getPhone(), deposit);
-
-        LOGGER.debug("Service registration Client {}", user);
+    public ClientDtoResponse clientRegistration(ClientDtoRequest clientDtoRequest, HttpServletResponse response) {
+        LOGGER.debug("Service registration Client {}", clientDtoRequest);
         try {
-            UUID token = UUID.randomUUID();
-            Cookie cookie = new Cookie(COOKIE_NAME, token.toString());
+            Client client = new Client(clientDtoRequest.getFirstName(), clientDtoRequest.getLastName(), clientDtoRequest.getPatronymic(), clientDtoRequest.getLogin(), clientDtoRequest.getPassword(),
+                    CLIENT, clientDtoRequest.getEmail(), clientDtoRequest.getAddress(), getNormalPhoneNumber(clientDtoRequest.getPhone()));
+
+            Cookie cookie = new Cookie(COOKIE_NAME, UUID.randomUUID().toString());
             response.addCookie(cookie);
 
-            user = clientDao.clientRegistration((Client) user, cookie);
+            client = clientDao.clientRegistration(client, cookie);
 
-            return new InputClientDtoResponse(user.getId(), user.getFirstName(), user.getLastName(), user.getPatronymic(),
-                    ((Client) user).getEmail(), ((Client) user).getAddress(), ((Client) user).getPhone(), ((Client) user).getDeposit().getDeposit());
-
-        } catch (RuntimeException ex) {
-            LOGGER.info("Service can't  registration Client {}, {}", user, ex);
-        }
-        return null;
-    }
-
-
-    public List<AddProductToBasketDtoResponse> addProductToBasket(AddProductToBasketDtoRequest request, String token) {
-        try {
-            User client = clientDao.getClientByToken(token);
-            if (client.getUserType() == CLIENT && (client != null)) {
-                Product product = new Product(request.getId(), request.getName(), request.getPrice(), request.getCount());
-                //Basket basket = new Basket(product);
-                clientDao.addProductToBasket((Client) client, product);
-                Basket basket = clientDao.getAllProductsInBasket(client);
-                return new ArrayList<AddProductToBasketDtoResponse>(
-                        basket.getProducts().stream()
-                                .map(prod -> new AddProductToBasketDtoResponse(
-                                        prod.getId(),
-                                        prod.getName(),
-                                        prod.getPrice(),
-                                        prod.getCount()))
-                                .collect(Collectors.toList())
-                );
-            }
+            return new ClientDtoResponse(client.getId(), client.getFirstName(), client.getLastName(), client.getPatronymic(),
+                    client.getEmail(), client.getAddress(), client.getPhone(), client.getDeposit().getAmount());
         } catch (DaoException ex) {
             throw new ServiceException(ex);
         }
-        return null;
     }
 
-    public InputClientDtoResponse updateClient(UpdateClientDtoRequest request, String token) {
-        User client = getClientByToken(token);
-        if (client.getPassword().equals(request.getOldPassword())) {
-            client.setFirstName(request.getFirstName());
-            client.setLastName(request.getLastName());
-            client.setPatronymic(request.getPatronymic());
-            ((Client) client).setEmail(request.getEmail());
-            ((Client) client).setAddress(request.getAddress());
-            ((Client) client).setPhone(request.getPhone());
-            client.setPassword(request.getNewPassword());
-            client = clientDao.updateClient(client);
-        }return new InputClientDtoResponse(client.getId(),client.getFirstName(),client.getLastName(),client.getPatronymic(),
-                ((Client)client).getEmail(),((Client)client).getAddress(),((Client)client).getPhone(),((Client)client).getDeposit().getDeposit());
+    public ClientDtoResponse updateClient(UpdateClientDtoRequest updateClientDtoRequest, String token) {
+        LOGGER.debug("Service update Client {}", updateClientDtoRequest);
+        try {
+            Client client = getClientByToken(token);
+
+            validUserPassword(client.getPassword(), updateClientDtoRequest.getOldPassword());
+
+            changeClientFields(client, updateClientDtoRequest);
+
+            clientDao.updateClient(client);
+
+            return new ClientDtoResponse(client.getId(), client.getFirstName(), client.getLastName(), client.getPatronymic(),
+                    client.getEmail(), client.getAddress(), client.getPhone(), client.getDeposit().getAmount());
+        } catch (DaoException ex) {
+            throw new ServiceException(ex);
+        }
+
     }
 
-    private User getClientByToken(String token) {
-        User client = clientDao.getUserByToken(token);
-        return (Client) client;
+    public InfoAboutAllClientDtoResponse getInfoAboutClients(String token) {
+        LOGGER.debug("Service get info about all clients by token {}", token);
+        try {
+            validAdmin(token);
+
+            List<Client> clients = clientDao.getAllClients(CLIENT);
+
+            return new InfoAboutAllClientDtoResponse(clients.stream()
+                    .map(client -> new InfoAboutClientDtoResponse(client.getId(), client.getFirstName(), client.getLastName(), client.getPatronymic(),
+                            client.getEmail(), client.getAddress(), client.getPhone(), client.getUserType())).collect(Collectors.toList()));
+        } catch (DaoException ex) {
+            throw new ServiceException(ex);
+        }
+    }
+
+    private void changeClientFields(Client client, UpdateClientDtoRequest request) {
+        client.setFirstName(request.getFirstName());
+        client.setLastName(request.getLastName());
+        client.setPatronymic(request.getPatronymic());
+        client.setEmail(request.getEmail());
+        client.setAddress(request.getAddress());
+        client.setPhone(getNormalPhoneNumber(request.getPhone()));
+        client.setPassword(request.getNewPassword());
+    }
+
+    private Client getClientByToken(String token) {
+        Client client = clientDao.getClientByToken(token);
+        if (client == null) {
+            throw new ServiceException(WRONG_TOKEN, token);
+        }
+        if (client.getUserType() != CLIENT) {
+            throw new ServiceException(PERMISSION_DENIED);
+        }
+        return client;
     }
 }

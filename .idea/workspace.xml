@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="4f062e7a-c08e-4b89-856c-1e81651fef5c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/sql/model.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sql/onlineshopmodel.mwb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/config/AppProperties.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/controller/AccountController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/controller/BasketController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/controller/CategoryController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/controller/DebugController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/controller/DepositController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/controller/ProductController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/controller/PurchaseController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/controller/SessionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/controller/SettingsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dao/BasketDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dao/CategoryDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dao/DebugDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dao/DepositDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dao/ProductDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dao/PurchaseDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/daoimpl/BasketDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/daoimpl/CategoryDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/daoimpl/DebugDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/daoimpl/DepositDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/daoimpl/ProductDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/daoimpl/PurchaseDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/daoimpl/SessionDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dto/request/AdminDtoRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dto/request/ClientDtoRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dto/request/ProductForPurchaseDtoRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dto/request/UpdateProductDtoRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dto/request/UpdateUserDtoRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dto/request/UserDtoRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dto/response/AdminDtoResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dto/response/AllCategoryDtoResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dto/response/AllProductsDtoResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dto/response/AllPurchasesDtoResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dto/response/ClientDtoResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dto/response/FailedDtoResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dto/response/InfoAboutAllClientDtoResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dto/response/ProductWithAboveCategoryNameDtoResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dto/response/ProductsInBasketDtoResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dto/response/PurchaseDtoResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dto/response/SettingsDtoResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dto/response/StatementDtoResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dto/response/StatementDtoResponseItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dto/response/UserDtoResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/exception/ServiceException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/globalexceptionhandlers/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/model/Purchase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/mybatis/mappers/BasketMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/mybatis/mappers/CategoryMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/mybatis/mappers/DepositMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/mybatis/mappers/ProductMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/mybatis/mappers/PurchaseMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/mybatis/mappers/SessionMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/order/Order.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/service/AccountService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/service/BaseService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/service/BasketService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/service/CategoryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/service/DebugService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/service/DepositService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/service/ProductService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/service/PurchaseService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/service/SessionService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/service/SettingsServerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/validation/constraint/NameConstraint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/validation/constraint/PhoneConstraint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/validation/constraint/UpdateProductNameConstraint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/validation/validator/LoginConstraintValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/validation/validator/NameValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/validation/validator/PasswordConstraintValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/validation/validator/PhoneValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/validation/validator/UpdateProductNameConstraintValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/ValidationMessages.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/net/thumbtack/onlineshop/AccountControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/net/thumbtack/onlineshop/AdminControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/net/thumbtack/onlineshop/BasketControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/net/thumbtack/onlineshop/CategoryControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/net/thumbtack/onlineshop/ClientControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/net/thumbtack/onlineshop/DepositControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/net/thumbtack/onlineshop/ProductControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/net/thumbtack/onlineshop/PurchasesControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/net/thumbtack/onlineshop/SessionControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/net/thumbtack/onlineshop/UserTestBase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/net/thumbtack/onlineshop/dao/DepositDaoImplTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/net/thumbtack/onlineshop/dao/ProductDaoImplTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/net/thumbtack/onlineshop/dao/PurchaseDaoImplTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/net/thumbtack/onlineshop/validationtests/AdminValidationTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/net/thumbtack/onlineshop/validationtests/ClientValidationTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/net/thumbtack/onlineshop/validationtests/ValidationUserTestBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sql/onlineshop.sql" beforeDir="false" afterPath="$PROJECT_DIR$/sql/onlineshop.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/OnlineShopServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/OnlineShopServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/config/Config.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/controller/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/controller/ClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/controller/ClientController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/controller/UserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dao/AdminDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dao/AdminDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dao/ClientDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dao/ClientDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dao/SessionDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/daoimpl/AdminDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/daoimpl/AdminDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/daoimpl/ClientDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/daoimpl/ClientDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/daoimpl/UserDaoImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/daoimpl/daoexception/DaoException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/exception/DaoException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dto/request/AddProductToBasketDtoRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dto/request/BuyProductDtoRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dto/request/CategoryDtoRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dto/request/CategoryDtoRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dto/request/DepositDtoRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dto/request/DepositDtoRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dto/request/EditCategoryDtoRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dto/request/UpdateCategoryDtoRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dto/request/EditProductDtoRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dto/request/LoginDtoRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dto/request/LoginDtoRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dto/request/ProductDtoRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dto/request/ProductDtoRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dto/request/PurchasesFromBasketDtoRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dto/request/RegistrationAdminDtoRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dto/request/RegistrationClientDtoRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dto/request/UpdateAdminDtoRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dto/request/UpdateAdminDtoRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dto/request/UpdateClientDtoRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dto/request/UpdateClientDtoRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dto/response/AddProductToBasketDtoResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dto/response/AllErrorResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dto/response/BuyProductDtoResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dto/response/CategoryDtoResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dto/response/CategoryDtoResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dto/response/CompositionBasketDtoResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dto/response/EditCategoryDtoResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dto/response/EditProductDtoResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dto/response/EmptyResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dto/response/EmptyResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dto/response/ErrorResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dto/response/FailedItemDtoResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dto/response/GetAllCategoryDtoResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dto/response/GetProductInfoDtoResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dto/response/ProductWithCategoryNameDtoResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dto/response/GetProductsDtoResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dto/response/InfoAboutClientDtoResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dto/response/InfoAboutClientDtoResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dto/response/InputAdminDtoResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dto/response/InputClientDtoResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dto/response/InputUserResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dto/response/ProductDtoResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dto/response/ProductDtoResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dto/response/PurchasesFromBasketDtoResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/dto/response/PurchasesFromBasketDtoResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/exception/AppErrorCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/exception/AppErrorCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/exception/AppException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/exception/AppException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/exception/GlobalExceptionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/model/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/model/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/model/Basket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/model/Basket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/model/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/model/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/model/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/model/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/model/Deposit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/model/Deposit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/model/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/model/Session.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/mybatis/mappers/AdminMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/mybatis/mappers/AdminMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/mybatis/mappers/ClientMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/mybatis/mappers/ClientMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/mybatis/mappers/UserMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/service/AdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/service/AdminService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/service/ClientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/service/ClientService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/service/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/service/exception/ServiceException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/validation/constraint/LoginConstraint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/validation/constraint/LoginConstraint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/validation/constraint/PasswordConstraint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/validation/constraint/PasswordConstraint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/validation/validator/LoginValidator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/thumbtack/onlineshop/validation/validator/PasswordValidator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/net/thumbtack/onlineshop/DemoApplicationTests.java" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1awbET2JTtsOMyttJrmNBpGkPA5" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Александр\Desktop\githab-onlineshop\onlineshop" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="OnlineShopServer" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="onlineshop" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="net.thumbtack.onlineshop.OnlineShopServer" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4f062e7a-c08e-4b89-856c-1e81651fef5c" name="Default Changelist" comment="" />
+      <created>1587649492009</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1587649492009</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

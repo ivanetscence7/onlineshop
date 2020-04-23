@@ -1,48 +1,26 @@
 package net.thumbtack.onlineshop.dto.request;
 
-public class UpdateAdminDtoRequest {
+import javax.validation.constraints.NotBlank;
 
-    private String firstName;
-    private String lastName;
-    private String patronymic;
+public class UpdateAdminDtoRequest extends UpdateUserDtoRequest {
+
+    @NotBlank(message = "{user.position.NotBlank.message}")
     private String position;
-    private String oldPassword;
-    private String newPassword;
 
     public UpdateAdminDtoRequest() {
     }
 
-    public String getFirstName() {
-        return firstName;
+    public UpdateAdminDtoRequest(@NotBlank String position) {
+        this.position = position;
     }
 
-    public String getLastName() {
-        return lastName;
-    }
-
-    public String getPatronymic() {
-        return patronymic;
+    public UpdateAdminDtoRequest(String firstName, String lastName, String patronymic, String oldPassword, String newPassword, String position) {
+        super(firstName, lastName, patronymic, oldPassword, newPassword);
+        this.position = position;
     }
 
     public String getPosition() {
         return position;
     }
 
-    public String getOldPassword() {
-        return oldPassword;
-    }
-
-    public String getNewPassword() {
-        return newPassword;
-    }
-
-    public UpdateAdminDtoRequest(String firstName, String lastName, String patronymic, String position, String oldPassword, String newPassword) {
-
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.patronymic = patronymic;
-        this.position = position;
-        this.oldPassword = oldPassword;
-        this.newPassword = newPassword;
-    }
 }

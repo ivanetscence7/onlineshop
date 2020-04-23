@@ -1,26 +1,39 @@
 package net.thumbtack.onlineshop.dto.request;
 
-import net.thumbtack.onlineshop.model.Category;
-
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Positive;
+import javax.validation.constraints.PositiveOrZero;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ProductDtoRequest {
-    @NotBlank
+
+    @NotBlank(message = "{product.name.NotBlank.message}")
     private String name;
-    @NotNull
-    private Integer price;
-    private Integer count;
+    @Positive(message = "{product.price.Positive.message}")
+    private int price;
+    @PositiveOrZero(message = "{product.count.PositiveOrZero.message}")
+    private int count;
     private List<Integer> categories;
 
     public ProductDtoRequest() {
     }
 
-    public ProductDtoRequest(String name, Integer price, Integer count, List<Integer> categories) {
+    public ProductDtoRequest(String name, int price) {
         this.name = name;
         this.price = price;
+    }
+
+    public ProductDtoRequest(String name, int price, int count) {
+        this(name, price);
         this.count = count;
+    }
+
+    public ProductDtoRequest(String name, int price, int count, List<Integer> categories) {
+        this(name, price, count);
+        if(categories==null){
+            this.categories = new ArrayList<>();
+        }
         this.categories = categories;
     }
 
@@ -28,15 +41,31 @@ public class ProductDtoRequest {
         return name;
     }
 
-    public Integer getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public Integer getCount() {
+    public int getCount() {
         return count;
     }
 
     public List<Integer> getCategories() {
         return categories;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
+    }
+
+    public void setCategories(List<Integer> categories) {
+        this.categories = categories;
     }
 }

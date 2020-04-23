@@ -1,7 +1,12 @@
 package net.thumbtack.onlineshop.dto.response;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import net.thumbtack.onlineshop.model.UserType;
 
+import java.util.ArrayList;
+import java.util.List;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class InfoAboutClientDtoResponse {
 
     private Integer id;
@@ -10,13 +15,15 @@ public class InfoAboutClientDtoResponse {
     private String patronymic;
     private String email;
     private String address;
-    private Integer phone;
+    private String phone;
     private UserType userType;
+    private List<PurchaseDtoResponse> purchases;
+
 
     public InfoAboutClientDtoResponse() {
     }
 
-    public InfoAboutClientDtoResponse(Integer id, String firstName, String lastName, String patronymic, String email, String address, Integer phone, UserType userType) {
+    public InfoAboutClientDtoResponse(Integer id, String firstName, String lastName, String patronymic, String email, String address, String phone, UserType userType) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -25,6 +32,11 @@ public class InfoAboutClientDtoResponse {
         this.address = address;
         this.phone = phone;
         this.userType = userType;
+    }
+
+    public InfoAboutClientDtoResponse(Integer id, String firstName, String lastName, String patronymic, String email, String address, String phone,UserType userType, List<PurchaseDtoResponse> purchases) {
+        this(id,firstName,lastName,patronymic,email,address,phone,userType);
+        this.purchases = purchases;
     }
 
     public Integer getId() {
@@ -51,11 +63,26 @@ public class InfoAboutClientDtoResponse {
         return address;
     }
 
-    public Integer getPhone() {
+    public String getPhone() {
         return phone;
     }
 
     public UserType getUserType() {
         return userType;
     }
+
+    public boolean addPurchase(PurchaseDtoResponse purchaseDtoResponse){
+        if(purchases != null){
+            purchases.add(purchaseDtoResponse);
+        }else{
+            purchases = new ArrayList<>();
+            purchases.add(purchaseDtoResponse);
+        }
+        return true;
+    }
+
+    public List<PurchaseDtoResponse> getPurchases() {
+        return purchases;
+    }
+
 }

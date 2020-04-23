@@ -1,9 +1,6 @@
 package net.thumbtack.onlineshop.dao;
 
-import net.thumbtack.onlineshop.model.Basket;
-import net.thumbtack.onlineshop.model.Client;
-import net.thumbtack.onlineshop.model.Product;
-import net.thumbtack.onlineshop.model.User;
+import net.thumbtack.onlineshop.model.*;
 
 import javax.servlet.http.Cookie;
 import java.util.List;
@@ -12,15 +9,11 @@ public interface ClientDao {
 
     User clientRegistration(Client user, Cookie cookie);
 
-    Client getClient(User user);
-
-    Product addProductToBasket(Client client, Product product);
-
     User getClientByToken(String token);
 
-    Basket getAllProductsInBasket(User client);
+    void updateClient(Client client);
 
-    User getUserByToken(String token);
+    List<Client> getAllClients(UserType type);
 
-    User updateClient(User client);
+    Client getClientsWithPurchasesById(Integer clientId);
 }

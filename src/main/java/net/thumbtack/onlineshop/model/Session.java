@@ -34,4 +34,12 @@ public class Session {
 
         return Objects.hash(getUser(), getCookie());
     }
+
+    @Override
+    public String toString() {
+        return "Session{" +
+                "user=" + user +
+                ", cookie='" + cookie + '\'' +
+                '}';
+    }
 }

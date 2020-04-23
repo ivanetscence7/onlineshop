@@ -3,27 +3,29 @@ package net.thumbtack.onlineshop.model;
 import java.util.List;
 import java.util.Objects;
 
-public class Category {
+public class Category  implements Comparable<Category>{
 
     private Integer id;
     private String name;
     private Category parent;
     private List<Category> subCategories;
-
+    private List<Product> products;
 
     public Category() {
     }
 
-    public Category(String name, Category parent) {
-        this.id = 0;
-        this.name = name;
-        this.parent = parent;
+    public Category(List<Product> products) {
+        this.products = products;
     }
 
     public Category(Integer id, String name, Category parent) {
         this.id = id;
         this.name = name;
         this.parent = parent;
+    }
+
+    public Category(String name, Category parent) {
+       this(0,name,parent);
     }
 
     public Category(String name) {
@@ -36,6 +38,13 @@ public class Category {
         this.name = name;
     }
 
+    public List<Product> getProducts() {
+        return products;
+    }
+
+    public void setProducts(List<Product> products) {
+        this.products = products;
+    }
 
     public Integer getId() {
         return id;
@@ -69,20 +78,20 @@ public class Category {
         return subCategories;
     }
 
+
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Category category = (Category) o;
-        return Objects.equals(getId(), category.getId()) &&
-                Objects.equals(getName(), category.getName()) &&
-                Objects.equals(getParent(), category.getParent()) &&
-                Objects.equals(getSubCategories(), category.getSubCategories());
+    public int compareTo(Category o) {
+        return name.compareTo(o.getName());
     }
 
     @Override
-    public int hashCode() {
-
-        return Objects.hash(getId(), getName(), getParent(), getSubCategories());
+    public String toString() {
+        return "Category{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", parent=" + parent +
+                ", subCategories=" + subCategories +
+                ", products=" + products +
+                '}';
     }
 }

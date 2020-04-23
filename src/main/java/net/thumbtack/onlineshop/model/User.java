@@ -16,14 +16,18 @@ public class User {
 
     }
 
-    public User(String firstName, String lastName, String patronymic, String login, String password, UserType userType) {
-        this.id = 0;
+    public User(int id, String firstName, String lastName, String patronymic, String login, String password, UserType userType) {
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.patronymic = patronymic;
         this.login = login;
         this.password = password;
         this.userType = userType;
+    }
+
+    public User(String firstName, String lastName, String patronymic, String login, String password, UserType userType) {
+       this(0,firstName,lastName,patronymic,login,password,userType);
     }
 
     public User(String firstName, String lastName, String patronymic, String login, String password) {
@@ -35,13 +39,13 @@ public class User {
         this.password = password;
     }
 
-    public void setUserType(UserType userType) {
-        this.userType = userType;
-    }
-
     public User(String login, String password) {
         this.login = login;
         this.password = password;
+    }
+
+    public void setUserType(UserType userType) {
+        this.userType = userType;
     }
 
 
@@ -111,5 +115,18 @@ public class User {
     public int hashCode() {
 
         return Objects.hash(getId(), getFirstName(), getLastName(), getPatronymic(), getLogin(), getPassword(), getUserType());
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", patronymic='" + patronymic + '\'' +
+                ", login='" + login + '\'' +
+                ", password='" + password + '\'' +
+                ", userType=" + userType +
+                '}';
     }
 }

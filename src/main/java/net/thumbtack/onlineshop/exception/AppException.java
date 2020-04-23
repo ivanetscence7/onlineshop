@@ -1,27 +1,24 @@
 package net.thumbtack.onlineshop.exception;
 
-public class AppException extends RuntimeException {
+import java.util.ArrayList;
+import java.util.List;
 
-    private AppErrorCode errorCode;
-    private String field;
-    private String message;
+public class AppException extends RuntimeException{
 
-    public AppException(AppErrorCode errorCode, String field, String message) {
-        this.errorCode = errorCode;
-        this.field = field;
-        this.message = message;
+    private List<ServiceException> serviceExceptions ;
+
+    public AppException() {
+        this.serviceExceptions = new ArrayList<>();
     }
 
-    public AppErrorCode getErrorCode() {
-        return errorCode;
+    public List<ServiceException> getServiceExceptions() {
+        return serviceExceptions;
     }
 
-    public String getField() {
-        return field;
-    }
-
-    @Override
-    public String getMessage() {
-        return message;
+    public boolean addException(ServiceException ex){
+        if(serviceExceptions == null){
+            serviceExceptions=new ArrayList<>();
+        }
+        return serviceExceptions.add(ex);
     }
 }

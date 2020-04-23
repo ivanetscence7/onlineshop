@@ -41,5 +41,12 @@ public class Admin extends User {
 
         return Objects.hash(super.hashCode(), getPosition());
     }
+
+    @Override
+    public String toString() {
+        return "Admin{" +
+                "position='" + position + '\'' +
+                '}';
+    }
 }
 
